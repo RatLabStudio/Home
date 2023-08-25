@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Rat Lab Project Repo</title>
+    <link rel="icon" href="https://ratlab.one/wp-content/uploads/2022/09/icon.png">
+    <style>
+        html {
+            background-color: darkslategray;
+            color: aliceblue;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            text-align: center;
+        }
+
+        input {
+            background-color: rgba(240, 248, 255, 0.5);
+            border: solid 1px black;
+            border-radius: 5px;
+            font-size: 16px;
+            padding: 5px;
+        }
+
+        button {
+            background-color: rgba(240, 248, 255, 0.5);
+            border: solid 1px black;
+            border-radius: 5px;
+            font-size: 16px;
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            filter: brightness(120%);
+        }
+
+        button:active {
+            filter: brightness(150%);
+        }
+
+        a {
+            color: lightgreen;
+            text-decoration: none;
+        }
+
+        #projectList {
+            background-color: rgba(0, 0, 0, 0.25);
+            border-radius: 15px;
+            padding: 15px;
+            width: 50%;
+            margin: auto;
+        }
+
+        ul {
+            font-size: 24px;
+        }
+
+        li {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-decoration: underline;">Rat Lab Project Repository</h1>
+    <br>
+    <h2>Enter Project ID Here:</h2>
+    <input id="projectId" type="text">
+    <button id="enter">Enter</button>
+    <br><br>
+    <div id="projectList">
+        <ul id="projects"></ul>
+    </div>
+    <br><br>
+    <a href="https://ratlab.one" style="font-size: 18px;">Return to The Rat Lab</a>
+    <p style="position: absolute; bottom: 15px; left: 15px; margin: 0px;">Rat Lab 2023</p>
+    <script>
+        document.getElementById("enter").addEventListener("click", function () {
+            openLink();
+        });
+        document.addEventListener("keydown", function (e) {
+            if (e.key == "Enter")
+                openLink();
+        })
+        function openLink() {
+            window.open("https://matteosalverio.github.io/ratlab/projects/" + document.getElementById("projectId").value, "_new");
+            document.getElementById("projectId").value = "";
+        }
+        var projects = [
+            "crosswordles", "crosswordle2", "cookieGame", "craftingTool", "endian", "endianThree", "flappyBird", "pacRat", "platformer", "ratGpt", "ratGui", "ratLabGame", "RatLabRewritten", "ratRpg", "ratType", "snake", "snakeUltraviolet", "solidworks", "vcpu"
+        ];
+        function loadProjects() {
+            for (let i = 0; i < projects.length; i++) {
+                document.getElementById("projects").innerHTML += "<li><a href='projects/" + projects[i] + "/'>" + projects[i] + "</a></li>";
+            }
+        }
+        loadProjects();
+    </script>
+</body>
+
+</html>
