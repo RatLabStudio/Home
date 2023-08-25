@@ -82,7 +82,7 @@
                 openLink();
         })
         function openLink() {
-            window.open("https://ratlabstudio.github.io/JavaScrips/" + document.getElementById("projectId").value, "_new");
+            window.open("https://ratlabstudio.github.io/JavaScript/" + document.getElementById("projectId").value, "_new");
             document.getElementById("projectId").value = "";
         }
         var projects = [
@@ -90,7 +90,7 @@
         ];
         function loadProjects() {
             for (let i = 0; i < projects.length; i++) {
-                document.getElementById("projects").innerHTML += "<li><a href='projects/" + projects[i] + "/'>" + projects[i] + "</a></li>";
+                document.getElementById("projects").innerHTML += "<li><a href='https://ratlabstudios.github.io/JavaScript/" + projects[i] + "/'>" + projects[i] + "</a></li>";
             }
         }
         loadProjects();
